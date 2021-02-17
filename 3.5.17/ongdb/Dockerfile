@@ -1,12 +1,12 @@
 FROM openjdk:8-jre-slim
 
-ENV NEO4J_SHA256=f90d45c72371940d87c05d7b775ecf173c9559521f4d22977b8036bac80c4fee \
+ENV NEO4J_SHA256=9829181bbd2689fe86fe63e9c50e2cea83c87760298076b750c8df8dabc51609 \
     NEO4J_TARBALL=ongdb-enterprise-3.5.17-unix.tar.gz \
     NEO4J_EDITION=enterprise \
     NEO4J_HOME="/var/lib/neo4j" \
     TINI_VERSION="v0.18.0" \
     TINI_SHA256="12d20136605531b09a2c2dac02ccee85e1b874eb322ef6baf7561cd93f93c855"
-ARG NEO4J_URI=http://cdn.graphfoundation.org/ongdb/dist/ongdb-enterprise-3.5.17-unix.tar.gz
+ARG NEO4J_URI=https://dist.graphstack.io/ongdb/ongdb-enterprise-3.5.17-unix.tar.gz
 
 RUN addgroup --system neo4j && adduser --system --no-create-home --home "${NEO4J_HOME}" --ingroup neo4j neo4j
 
